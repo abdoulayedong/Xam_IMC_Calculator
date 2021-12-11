@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam_IMC_Calculator.App">
+    <Application.Resources>
+
+        <Color x:Key="SliderColor">#022d4e</Color>
+        <Color x:Key="SliderBackgroundColor">#1b89b2</Color>
+        <Color x:Key="MesureColor">#339bba</Color>
+        <Color x:Key="TitleColor">#00171F</Color>
+        
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Transat"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style x:Key="TitleStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource TitleColor}"/>
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+
+        <Style x:Key="ValueStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="TextColor" Value="{StaticResource MesureColor}"/>
+        </Style>
+
+        <Style TargetType="Slider">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="Margin" Value="10,0"/>
+            <Setter Property="ThumbColor" Value="{StaticResource SliderColor}"/>
+            <Setter Property="MinimumTrackColor" Value="{StaticResource SliderBackgroundColor}"/>
+            <Setter Property="MaximumTrackColor" Value="{StaticResource SliderBackgroundColor}"/>
+        </Style>
+    </Application.Resources>
+</Application>

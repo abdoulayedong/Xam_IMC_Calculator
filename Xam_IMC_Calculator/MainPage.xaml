@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam_IMC_Calculator.MainPage"
+             xmlns:local="clr-namespace:Xam_IMC_Calculator"
+             >
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="50">            
+            <StackLayout HorizontalOptions="FillAndExpand" >            
+                <Label Text="Quelle est votre taille ?" Style="{StaticResource TitleStyle}"/>
+                <Label Text="{Binding Height, StringFormat='{0} cm', FallbackValue='170 cm'}"
+                       Style="{StaticResource ValueStyle}"/>
+                <Slider x:Name="Size"
+                        Maximum="300"
+                        Minimum="40"
+                        Value="{Binding Height}"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="0,50">
+                <Label Text="Quelle est votre masse ?" Style="{StaticResource TitleStyle}"/>
+                <Label Text="{Binding Weight, StringFormat='{0} kg', FallbackValue='50 kg'}"
+                       Style="{StaticResource ValueStyle}"/>
+                <Slider x:Name="Weigh"
+                        Maximum="300"
+                        Minimum="40"
+                        Value="{Binding Weight}"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0,-150,0,150">
+            <Label Text="Votre Imc est"/>
+            <Label Text="{Binding ImcValue, FallbackValue='25.12'}" FontSize="40"/>
+            <Label Text="{Binding ImcDetail, StringFormat='Vous êtes {0}'}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
